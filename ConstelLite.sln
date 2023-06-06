@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLite", "ConstelLite.csproj", "{C815DCC6-FFDA-4F48-A20D-C062D356B7ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLiteShell", "..\ConstelLiteShell\ConstelLiteShell.csproj", "{097A1706-3FC7-4D4E-89D8-1818CA9BD78A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLiteTestPlayground", "..\ConstelLiteTestPlayground\ConstelLiteTestPlayground.csproj", "{35CEF749-7035-4A35-BE20-2C1781D13503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstelLiteTesting", "..\ConstelLiteTesting\ConstelLiteTesting.csproj", "{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C815DCC6-FFDA-4F48-A20D-C062D356B7ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C815DCC6-FFDA-4F48-A20D-C062D356B7ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C815DCC6-FFDA-4F48-A20D-C062D356B7ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C815DCC6-FFDA-4F48-A20D-C062D356B7ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{097A1706-3FC7-4D4E-89D8-1818CA9BD78A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{097A1706-3FC7-4D4E-89D8-1818CA9BD78A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{097A1706-3FC7-4D4E-89D8-1818CA9BD78A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{097A1706-3FC7-4D4E-89D8-1818CA9BD78A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35CEF749-7035-4A35-BE20-2C1781D13503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CEF749-7035-4A35-BE20-2C1781D13503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CEF749-7035-4A35-BE20-2C1781D13503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CEF749-7035-4A35-BE20-2C1781D13503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5F770EB-C681-4214-9F78-B53B8991BD64}
+	EndGlobalSection
+EndGlobal
