@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLiteShell", "..\Cons
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLiteTestPlayground", "..\ConstelLiteTestPlayground\ConstelLiteTestPlayground.csproj", "{35CEF749-7035-4A35-BE20-2C1781D13503}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstelLiteTesting", "..\ConstelLiteTesting\ConstelLiteTesting.csproj", "{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLiteTesting", "..\ConstelLiteTesting\ConstelLiteTesting.csproj", "{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
