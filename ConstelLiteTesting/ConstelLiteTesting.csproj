@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConstelLite\ConstelLite.csproj" />
+    <ProjectReference Include="..\ConstelLite.csproj" />
   </ItemGroup>
 
 </Project>

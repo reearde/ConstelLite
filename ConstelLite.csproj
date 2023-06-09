@@ -9,6 +9,18 @@
 	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="ConstelLiteShell\**" />
+    <Compile Remove="ConstelLiteTesting\**" />
+    <Compile Remove="ConstelLiteTestPlayground\**" />
+    <EmbeddedResource Remove="ConstelLiteShell\**" />
+    <EmbeddedResource Remove="ConstelLiteTesting\**" />
+    <EmbeddedResource Remove="ConstelLiteTestPlayground\**" />
+    <None Remove="ConstelLiteShell\**" />
+    <None Remove="ConstelLiteTesting\**" />
+    <None Remove="ConstelLiteTestPlayground\**" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Antlr4.Runtime.Standard" Version="4.13.0" />
 	</ItemGroup>

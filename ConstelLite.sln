@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLite", "ConstelLite.csproj", "{C815DCC6-FFDA-4F48-A20D-C062D356B7ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLiteShell", "..\ConstelLiteShell\ConstelLiteShell.csproj", "{097A1706-3FC7-4D4E-89D8-1818CA9BD78A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLiteShell", "ConstelLiteShell\ConstelLiteShell.csproj", "{9EB6FC63-C361-49BE-98B9-A32A17DB5761}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLiteTestPlayground", "..\ConstelLiteTestPlayground\ConstelLiteTestPlayground.csproj", "{35CEF749-7035-4A35-BE20-2C1781D13503}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLiteTesting", "ConstelLiteTesting\ConstelLiteTesting.csproj", "{451A8715-A659-414A-B856-063A63390DC0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLiteTesting", "..\ConstelLiteTesting\ConstelLiteTesting.csproj", "{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstelLiteTestPlayground", "ConstelLiteTestPlayground\ConstelLiteTestPlayground.csproj", "{0D1B4634-4A0F-4BA2-A9FB-646705DC6FD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{C815DCC6-FFDA-4F48-A20D-C062D356B7ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C815DCC6-FFDA-4F48-A20D-C062D356B7ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C815DCC6-FFDA-4F48-A20D-C062D356B7ED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{097A1706-3FC7-4D4E-89D8-1818CA9BD78A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{097A1706-3FC7-4D4E-89D8-1818CA9BD78A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{097A1706-3FC7-4D4E-89D8-1818CA9BD78A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{097A1706-3FC7-4D4E-89D8-1818CA9BD78A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35CEF749-7035-4A35-BE20-2C1781D13503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35CEF749-7035-4A35-BE20-2C1781D13503}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35CEF749-7035-4A35-BE20-2C1781D13503}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35CEF749-7035-4A35-BE20-2C1781D13503}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CF7C3C1-1347-4BA9-B893-451DCA01E40F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EB6FC63-C361-49BE-98B9-A32A17DB5761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EB6FC63-C361-49BE-98B9-A32A17DB5761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EB6FC63-C361-49BE-98B9-A32A17DB5761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EB6FC63-C361-49BE-98B9-A32A17DB5761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{451A8715-A659-414A-B856-063A63390DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{451A8715-A659-414A-B856-063A63390DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{451A8715-A659-414A-B856-063A63390DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{451A8715-A659-414A-B856-063A63390DC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D1B4634-4A0F-4BA2-A9FB-646705DC6FD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D1B4634-4A0F-4BA2-A9FB-646705DC6FD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D1B4634-4A0F-4BA2-A9FB-646705DC6FD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D1B4634-4A0F-4BA2-A9FB-646705DC6FD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
