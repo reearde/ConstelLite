@@ -5,7 +5,7 @@
     <Company />
     <Product />
     <Authors>Kağan H. Erol</Authors>
-    <Version>0.5.4</Version>
+    <Version>0.6.0</Version>
 	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
@@ -23,6 +23,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Antlr4.Runtime.Standard" Version="4.13.0" />
+		<PackageReference Include="protobuf-net" Version="3.2.26" />
 	</ItemGroup>
 
 </Project>

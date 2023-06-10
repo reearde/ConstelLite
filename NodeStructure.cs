@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ProtoBuf;
 
 namespace ConstelLite
 {
@@ -6,11 +7,13 @@ namespace ConstelLite
     /// Class <c>Node</c> models a node(vertex) in the graph.
     /// This is a subclass of class <c>GraphEntity</c>.
     /// </summary>
+    [ProtoContract]
     public class Node : GraphEntity
     {
         /// <value>
         /// Property <c>Labels</c> represents a set tokens that is assigned to nodes only.
         /// </value>
+        [ProtoMember(1)]
         public HashSet<string> Labels { get; set; }
 
         /// <summary>

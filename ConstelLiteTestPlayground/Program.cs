@@ -9,7 +9,13 @@ namespace ConstelLiteTestPlayground
         {
             GraphEngine MyEngine = new GraphEngine();
 
-            //MyEngine.ExecuteQuery("CREATE (n), (n:Turkish:German), (a:Swedish), (b:Swedish {name: 'Herkel'})");
+            for (int i = 0; i < 100000; i++)
+            {
+                MyEngine.ExecuteQuery("CREATE (:A:B:C:D {id: 42, name: 'foo'})-[r:T1]->(:E:F:G:H {id: 0, name: 'bar'})");
+            }
+            MyEngine.SerializeGraphToFile("testdb2");
+
+            //MyEngine.ExecuteQuery("CREATE (n), (n:Turkish:German), (a:Swedish), (b:Swedish {name: 'Peter'})");
             //MyEngine.ExecuteQuery("MATCH (n) WHERE n:Swedish RETURN n");
             //MyEngine.ExecuteQuery("MATCH (n) DETACH DELETE n");
             //MyEngine.ExecuteQuery("MATCH (n:Turkish) RETURN n");
@@ -18,7 +24,7 @@ namespace ConstelLiteTestPlayground
             //MyEngine.ExecuteQuery("MATCH (:A)-[r]->(:B) RETURN r");
 
             // CREATE Node with Multiple Properties
-            //MyEngine.ExecuteQuery("CREATE (m:Turkish {name: 'Mehmet', surname: 'Bahçeli'})");
+            //MyEngine.ExecuteQuery("CREATE (m:Turkish {name: 'Mehmet', surname: 'Öz'})");
 
             /* Create Feature 1 */
             // CREATE [1] a single node
@@ -43,7 +49,7 @@ namespace ConstelLiteTestPlayground
             //MyEngine.ExecuteQuery("CREATE ({created: true})");
 
             // CREATE [9] Create a single node with two properties
-            //MyEngine.ExecuteQuery("CREATE (n {id: 12, name: 'foo'})");
+            //MyEngine.ExecuteQuery("CREATE (n {id: 42, name: 'foo'})");
 
             /* Create Feature 2 */
             // CREATE [1] two nodes and a single relationship in a single pattern
@@ -51,19 +57,19 @@ namespace ConstelLiteTestPlayground
             //MyEngine.ExecuteQuery("CREATE (:A)-[:Re]->(:B)");
 
             // CREATE [2] two nodes and a single relationship in separate patterns
-            //MyEngine.ExecuteQuery("CREATE (a), (b), (a)-[:Rel]->(b)");
+            //MyEngine.ExecuteQuery("CREATE (a), (b), (a)-[:REL_TYPE]->(b)");
             //MyEngine.ExecuteQuery("CREATE (c:Person), (d:Pet), (c)<-[:RUNS]-(d)");
 
             // NOT SUPPORTED - CREATE [3] two nodes and a single relationship in separate clauses
             //MyEngine.ExecuteQuery("CREATE (a) CREATE (b) CREATE (a)-[:R]->(b)");
 
             // CREATE [4] two nodes and a single relationship in the reverse direction
-            //MyEngine.ExecuteQuery("CREATE (:A)<-[:Rela]-(:B)");
-            //MyEngine.ExecuteQuery("CREATE (c:Person)<-[r:RUNSfgdg]-(d:Pet)");
+            //MyEngine.ExecuteQuery("CREATE (:A)<-[:REL_TYPE]-(:B)");
+            //MyEngine.ExecuteQuery("CREATE (c:Person)<-[r:RUNS]-(d:Pet)");
 
             // CREATE [7] a single node and a single self loop in a single pattern
             //MyEngine.ExecuteQuery("CREATE (root)-[:LINK]->(root)");
-            //MyEngine.ExecuteQuery("CREATE (root:Person), (root)<-[:RUNS]-(root), (root)-[:TIMID]->(root)");
+            //MyEngine.ExecuteQuery("CREATE (root:Person), (root)<-[:REL1]-(root), (root)-[:REL2]->(root)");
 
             // CREATE [8] a single node and a single self loop in separate patterns
             //MyEngine.ExecuteQuery("CREATE (root), (root)-[:LINK]->(root)");
@@ -72,7 +78,7 @@ namespace ConstelLiteTestPlayground
 
             // CREATE [13] a single relationship with a property
             //MyEngine.ExecuteQuery("CREATE ()-[:R {num: 42}]->()");
-            //MyEngine.ExecuteQuery("CREATE (root:Person), (root)<-[:RUNS {num: 42}]-(root), (root)<-[:TIMID {num: 42, name: 'Ahmet'}]-(root)");
+            //MyEngine.ExecuteQuery("CREATE (root:Person), (root)<-[:REL1 {num: 42}]-(root), (root)<-[:REL2 {num: 42, name: 'Ahmet'}]-(root)");
 
             // CREATE [15] a single relationship with two properties
             //MyEngine.ExecuteQuery("CREATE ()-[:R {id: 12, name: 'foo'}]->()");
@@ -91,11 +97,11 @@ namespace ConstelLiteTestPlayground
             //MyEngine.ExecuteQuery("MATCH (a:A:B) RETURN a");
 
             // MATCH [4] Simple node inline property predicate
-            //MyEngine.ExecuteQuery("CREATE ({name: 'bar'}), ({name: 'monkey'}), ({firstname: 'bar'})");
+            //MyEngine.ExecuteQuery("CREATE ({name: 'bar'}), ({name: 'foo'}), ({surname: 'bar'})");
             //MyEngine.ExecuteQuery("MATCH (n {name: 'bar'}) RETURN n");
 
-            //MyEngine.ExecuteQuery("CREATE (:Person {name: 'Ahmet', Surname: 'Yıldırım'}), ({name: 'Ahmet'}), ({firstname: 'Ahmet', Surname: 'Yıldırım'})");
-            //MyEngine.ExecuteQuery("MATCH (n {name: 'Ahmet', Surname: 'Yıldırım'}) RETURN n");
+            //MyEngine.ExecuteQuery("CREATE (:Person {name: 'Ahmet', Surname: 'Yıldız'}), ({name: 'Ahmet'}), ({firstname: 'Ahmet', Surname: 'Yıldız'})");
+            //MyEngine.ExecuteQuery("MATCH (n {name: 'Ahmet', Surname: 'Yıldız'}) RETURN n");
 
             /* Match Feature 2 - Match Relationships */
             // MATCH [1] Match non-existent relationships returns empty
@@ -121,12 +127,12 @@ namespace ConstelLiteTestPlayground
             //MyEngine.ExecuteQuery("CREATE (:A {id: 0})<-[:ADMIN]-(:B {id: 1})-[:ADMIN]->(:C {id: 2, a: 'A'})");
             //MyEngine.ExecuteQuery("MATCH (a)-[:ADMIN]-(b) WHERE a:A RETURN a.id, b.id");
 
-
+            /*
             MyEngine.ExecuteQuery(@"CREATE (andy:Swedish:Person {name: 'Andy', age: 36, belt: 'white'}), 
             (timothy:Person {name: 'Timothy', age: 25}), (peter:Person {name: 'Peter', age: 35, email: 'peter_n@example.com'}),
             (andy)-[:KNOWS {since: 2012}]->(timothy), (andy)-[:KNOWS {since: 1999}]->(peter)");
             MyEngine.ExecuteQuery("MATCH (n) WHERE n:Swedish RETURN n");
-
+            */
 
             // NOT SUPPORTED - WHERE [3] Filter node with property predicate on a single variable with multiple bindings
             //MyEngine.ExecuteQuery("CREATE (), ({name: 'Bar'}), (:Bar)");
@@ -174,7 +180,7 @@ namespace ConstelLiteTestPlayground
             //MyEngine.ExecuteQuery("MATCH (n:Person {name: 'Tom Hanks'}) DELETE n");  // THIS MATCH NOT SUPPORTED
             //MyEngine.ExecuteQuery("MATCH (n:Person) DELETE n");
             //MyEngine.ExecuteQuery("MATCH (n {name: 'Tom Hanks'}) DELETE n");
-            //MyEngine.ExecuteQuery("MATCH ()-[r:ACTED_IN]->() RETURN r");        // THIS IS NICE
+            //MyEngine.ExecuteQuery("MATCH ()-[r:ACTED_IN]->() RETURN r");
         }
     }
 }

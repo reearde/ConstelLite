@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ProtoBuf;
 
 namespace ConstelLite
 {
@@ -6,22 +7,34 @@ namespace ConstelLite
     /// Class <c>Relationship</c> models a Relationship(edge) in the graph.
     /// This is a subclass of class <c>GraphEntity</c>.
     /// </summary>
+    [ProtoContract]
     public class Relationship : GraphEntity
     {
         /// <value>
         /// Property <c>RelationshipType</c> represents a token that is assigned to relationships only.
         /// </value>
+        [ProtoMember(1)]
         public string RelationshipType { get; set; }
 
         /// <value>
         /// Property <c>SourceNode</c> represents the source Node of the Relationship.
         /// </value>
+        [ProtoMember(2)]
         public Node SourceNode { get; set; }
 
         /// <value>
         /// Property <c>TargetNode</c> represents the target Node of the Relationship.
         /// </value>
+        [ProtoMember(3)]
         public Node TargetNode { get; set; }
+
+        /// <summary>
+        /// This parameterless constructor initializes a new Relationship.
+        /// </summary>
+        public Relationship()
+        {
+
+        }
 
         /// <summary>
         /// This constructor initializes the new Relationship and assigns its type, source node, target node.

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using ConstelLite;
 
 namespace ConstelLiteShell
@@ -69,6 +70,8 @@ namespace ConstelLiteShell
                     }
                     Console.WriteLine(".open - Opens the ContelLite graph database.");
                     Console.WriteLine(".close - Closes the ContelLite graph database.");
+                    Console.WriteLine(".save - Saves the current graph database to specified database file.");
+                    Console.WriteLine(".load - Loads specified database from file.");
                     Console.WriteLine(".help - Gives usage hints about ConstelLite Shell, ConstelLite Graph Database queries, and meta-commands.");
                     Console.WriteLine(".exit - Closes the program.");
                     
@@ -85,6 +88,58 @@ namespace ConstelLiteShell
                 if (inputBuffer == ".close" && isDatabaseOpened)
                 {
                     isDatabaseOpened = false;
+                }
+                if (inputBuffer == ".save" && isDatabaseOpened)
+                {
+                    Console.Write("Enter the file name to be saved: ");
+                    inputBuffer = Console.ReadLine();
+                    graphEngine.SerializeGraphToFile(inputBuffer);
+                    Console.WriteLine($"Graph database saved to {inputBuffer}.db");
+                }
+                if (inputBuffer == ".load" && isDatabaseOpened)
+                {
+                    string directoryPath = AppDomain.CurrentDomain.BaseDirectory;
+                    string[] dbFiles = Directory.GetFiles(directoryPath, "*.db");
+
+                    if (dbFiles.Length > 0)
+                    {
+                        Console.WriteLine("These database files found:");
+
+                        foreach (string filePath in dbFiles)
+                        {
+                            string fileName = Path.GetFileName(filePath);
+                            Console.WriteLine(fileName);
+                        }
+                        Console.Write("Enter the file name to be loaded: ");
+                        inputBuffer = Console.ReadLine();
+
+                        try
+                        {
+                            if (File.Exists(inputBuffer + ".db"))
+                            {
+                                // File exists
+                                graphEngine.DeserializeGraphFromFile(inputBuffer);
+                                Console.WriteLine($"Graph database {inputBuffer}.db loaded.");
+                            }
+                            else
+                            {
+                                // File does not exist, handle the error
+                                Console.WriteLine($"The database file '{inputBuffer}.db' does not exist.");
+                            }
+                        }
+                        catch (FileNotFoundException ex)
+                        {
+                            // Handle the exception
+                            Console.WriteLine("An error occurred while accessing the file:");
+                            Console.WriteLine(ex.Message);
+                        }
+                        
+                    }
+                    else
+                    {
+                        Console.WriteLine("There are no database files found.");
+                    }
+                    
                 }
                 else if(inputBuffer != ".exit" && inputBuffer != ".open" && inputBuffer != ".close" && inputBuffer != ".help")
                 {

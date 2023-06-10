@@ -6,8 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Collections.Immutable" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="ConstelLite">
-      <HintPath>..\bin\Debug\netstandard2.1\ConstelLite.dll</HintPath>
+	  <HintPath Condition="Exists('..\bin\Debug\netstandard2.1\ConstelLite.dll')">..\bin\Debug\netstandard2.1\ConstelLite.dll</HintPath>
+	  <HintPath Condition="Exists('..\bin\Release\netstandard2.1\ConstelLite.dll')">..\bin\Release\netstandard2.1\ConstelLite.dll</HintPath>
     </Reference>
   </ItemGroup>
 

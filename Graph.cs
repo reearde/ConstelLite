@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ProtoBuf;
 
 namespace ConstelLite
 {
@@ -7,29 +8,35 @@ namespace ConstelLite
     /// Class <c>Graph</c> models a directed labeled property graph with nodes and relationships.
     /// It follows the Singleton design pattern, as the graph database supports only one Graph instance.
     /// </summary>
+    [ProtoContract]
     public sealed class Graph
     {
         /// <value>
         /// Dictionary <c>outgoingRelationships</c> represents outgoing relationships in the graph.
         /// To do so, it stores nodes and their respective relationships as a key-value pair.
         /// </value>
+        [ProtoMember(1)]
         public Dictionary<Node, List<Relationship>> outgoingRelationships;
         /// <value>
         /// Dictionary <c>incomingRelationships</c> represents incoming relationships in the graph.
         /// To do so, it stores nodes and their respective relationships as a key-value pair.
         /// </value>
+        [ProtoMember(2)]
         public Dictionary<Node, List<Relationship>> incomingRelationships;
         /// <value>
         /// Property <c>Size</c> represents the size of the graph in terms of number of nodes in the graph.
         /// </value>
+        [ProtoMember(3)]
         public static int Size { get; private set; }
         /// <value>
         /// Property <c>NodeIdCount</c> is a counter to be utilized to assign a unique identifier of a node.
         /// </value>
+        [ProtoMember(4)]
         public static int NodeIdCount { get; private set; }
         /// <value>
         /// Property <c>RelationshipIdCount</c> is a counter to be utilized to assign a unique identifier of a relationship.
         /// </value>
+        [ProtoMember(5)]
         public static int RelationshipIdCount { get; private set; }
 
         /// <summary>
