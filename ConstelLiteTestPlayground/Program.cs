@@ -9,11 +9,14 @@ namespace ConstelLiteTestPlayground
         {
             GraphEngine MyEngine = new GraphEngine();
 
+            /*
+            // CREATE a huge amount of Nodes and Relationships
             for (int i = 0; i < 100000; i++)
             {
                 MyEngine.ExecuteQuery("CREATE (:A:B:C:D {id: 42, name: 'foo'})-[r:T1]->(:E:F:G:H {id: 0, name: 'bar'})");
             }
-            MyEngine.SerializeGraphToFile("testdb2");
+            MyEngine.SerializeGraphToFile("testdb");
+            */
 
             //MyEngine.ExecuteQuery("CREATE (n), (n:Turkish:German), (a:Swedish), (b:Swedish {name: 'Peter'})");
             //MyEngine.ExecuteQuery("MATCH (n) WHERE n:Swedish RETURN n");
@@ -82,6 +85,13 @@ namespace ConstelLiteTestPlayground
 
             // CREATE [15] a single relationship with two properties
             //MyEngine.ExecuteQuery("CREATE ()-[:R {id: 12, name: 'foo'}]->()");
+
+            /*
+            // NOT SUPPORTED - CREATE a relationship with a matched node
+            MyEngine.ExecuteQuery("CREATE (p:Person {name: 'John', age: 30})");
+            MyEngine.ExecuteQuery("MATCH (p1:Person {name: 'John'}) CREATE(p1)-[:FRIEND]->(p2:Person {name: 'Alice'})");
+            MyEngine.ExecuteQuery("MATCH ()-[r]->() RETURN r");
+            */
 
             /* Match Feature 1 - Match Nodes */
             // MATCH [1] Match non-existent nodes returns empty
