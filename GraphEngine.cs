@@ -28,7 +28,7 @@ namespace ConstelLite
         }
 
         /// <summary>
-        /// This method executes a query by parsing it, listening(walking) the parsed tree.
+        /// ExecuteQuery() method executes a query by parsing it, listening(walking) the parsed tree.
         /// Listener acts as an event handler -> waits for a signal, then invokes the necessary methods.
         /// When needed, listener calls the necessary method from the class <c>GraphCypherListener</c> to execute specific behavior (e.g. CREATE, MATCH, DELETE, etc.).
         /// It handles exceptions occured in the query.
