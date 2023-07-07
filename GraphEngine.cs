@@ -1,6 +1,7 @@
 ﻿using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace ConstelLite
@@ -18,6 +19,8 @@ namespace ConstelLite
         /// SUBJECT TO CHANGE
         /// </summary>
         public Graph testGraph;
+        public static string ReturnResult { get; set; }
+        public static (HashSet<Node>, HashSet<Relationship>) MatchResult { get; set; }
         public void NewGraph()
         {
             Graph.SetInstance(new Graph());
@@ -34,7 +37,7 @@ namespace ConstelLite
         /// It handles exceptions occured in the query.
         /// It also counts the query time and prints it to Console.
         /// </summary>
-        public void ExecuteQuery(string input)
+        public string ExecuteQuery(string input)
         {
             // Start Stopwatch for Counting Time
             var queryWatch = Stopwatch.StartNew();
@@ -67,6 +70,9 @@ namespace ConstelLite
             var elapsedTime = queryWatch.Elapsed.TotalMilliseconds;
             Console.WriteLine("Query took " + elapsedTime + "ms");
             Console.WriteLine();
+
+            // Return result
+            return ReturnResult;
         }
 
         public void SerializeGraphToFile(string inputFileName)

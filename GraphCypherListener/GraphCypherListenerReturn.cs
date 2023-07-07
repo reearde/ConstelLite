@@ -34,7 +34,6 @@ namespace ConstelLite
                 Console.Write("}");
             }
             Console.Write($")");
-
         }
 
         /// <summary>
@@ -105,10 +104,10 @@ namespace ConstelLite
                             Console.WriteLine("+------------------+");
                             Console.WriteLine(matchVariableName);
                             Console.WriteLine("+------------------+");
-                            if (matchResult.Item2.Count != 0)
+                            if (GraphEngine.MatchResult.Item2.Count != 0)
                             {
                                 // Return Relationships
-                                foreach (var relationship in matchResult.Item2)
+                                foreach (var relationship in GraphEngine.MatchResult.Item2)
                                 {
                                     PrintNode(relationship.SourceNode);
                                     PrintRelationship(relationship);
@@ -116,10 +115,10 @@ namespace ConstelLite
                                     Console.WriteLine();
                                 }
                             }
-                            else if (matchResult.Item1.Count != 0)
+                            else if (GraphEngine.MatchResult.Item1.Count != 0)
                             {
                                 // Return Nodes
-                                foreach (var node in matchResult.Item1)
+                                foreach (var node in GraphEngine.MatchResult.Item1)
                                 {
                                     PrintNode(node);
                                     Console.WriteLine();
@@ -152,16 +151,17 @@ namespace ConstelLite
                                 Console.WriteLine("+------------------+");
                                 Console.WriteLine($"{matchVariableName}.{returnPropertyKey}");
                                 Console.WriteLine("+------------------+");
-                                if (matchResult.Item2.Count != 0)
+                                if (GraphEngine.MatchResult.Item2.Count != 0)
                                 {
                                     // Return Relationships filtered by -> RETURN n.key
-                                    foreach (var relationship in matchResult.Item2)
+                                    foreach (var relationship in GraphEngine.MatchResult.Item2)
                                     {
                                         if (relationship.Properties != null)
                                         {
                                             if (relationship.Properties.ContainsKey(returnPropertyKey))
                                             {
                                                 Console.WriteLine(relationship.Properties[returnPropertyKey]);
+                                                GraphEngine.ReturnResult = relationship.Properties[returnPropertyKey];
                                             }
                                             else
                                             {
@@ -170,16 +170,17 @@ namespace ConstelLite
                                         }
                                     }
                                 }
-                                else if (matchResult.Item1.Count != 0)
+                                else if (GraphEngine.MatchResult.Item1.Count != 0)
                                 {
                                     // Return Nodes filtered by -> RETURN n.key
-                                    foreach (var node in matchResult.Item1)
+                                    foreach (var node in GraphEngine.MatchResult.Item1)
                                     {
                                         if (node.Properties != null)
                                         {
                                             if (node.Properties.ContainsKey(returnPropertyKey))
                                             {
                                                 Console.WriteLine(node.Properties[returnPropertyKey]);
+                                                GraphEngine.ReturnResult = node.Properties[returnPropertyKey];
                                             }
                                             else
                                             {

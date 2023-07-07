@@ -41,7 +41,7 @@ namespace ConstelLite
                     // DELETE pattern with only variable name -> DELETE n
                     if (deleteVariableName == matchVariableName)
                     {
-                        if (matchResult.Item2.Count != 0)
+                        if (GraphEngine.MatchResult.Item2.Count != 0)
                         {
                             // Delete Relationships
                             /*
@@ -67,7 +67,7 @@ namespace ConstelLite
                         else //if (matchResult.Item1.Count != 0)
                         {
                             // Delete Nodes
-                            foreach (var node in matchResult.Item1)
+                            foreach (var node in GraphEngine.MatchResult.Item1)
                             {
                                 if (Graph.GetInstance().outgoingRelationships.ContainsKey(node))
                                 {

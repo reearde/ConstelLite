@@ -52,9 +52,9 @@ namespace ConstelLite
                         //Console.WriteLine(whereLabel.GetText());
                         //Console.WriteLine(whereNodeLabels.Length);
 
-                        if (matchResult.Item1 != null)
+                        if (GraphEngine.MatchResult.Item1 != null)
                         {
-                            foreach (var node in matchResult.Item1.ToList())
+                            foreach (var node in GraphEngine.MatchResult.Item1.ToList())
                             {
                                 int count = 0;
                                 if (node.Labels != null)
@@ -70,7 +70,7 @@ namespace ConstelLite
 
                                 if (count != whereNodeLabels.Length)
                                 {
-                                    matchResult.Item1.Remove(node);
+                                    GraphEngine.MatchResult.Item1.Remove(node);
                                 }
                             }
                         }

@@ -12,7 +12,7 @@ namespace ConstelLite
     {
         public string matchVariableName;
         //Dictionary<string, string> matchVariableList;
-        public (HashSet<Node>, HashSet<Relationship>) matchResult;
+        //public (HashSet<Node>, HashSet<Relationship>) matchResult;
 
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace ConstelLite
                         if (count == matchNodeLabels.oC_NodeLabel().Length)
                         {
                             // Found a node, add it to result
-                            matchResult.Item1.Add(graphNode);
+                            GraphEngine.MatchResult.Item1.Add(graphNode);
                         }
                     }
                 }
@@ -81,7 +81,7 @@ namespace ConstelLite
                         if (count == matchNodePropertiesContext.oC_PropertyKeyName().Length)
                         {
                             // Found a node, add it to result
-                            matchResult.Item1.Add(graphNode);
+                            GraphEngine.MatchResult.Item1.Add(graphNode);
                         }
                     }
                 }
@@ -91,7 +91,7 @@ namespace ConstelLite
             // MATCH all nodes -> MATCH (n)
             foreach (var node in Graph.GetInstance().outgoingRelationships.Keys)
             {
-                matchResult.Item1.Add(node);
+                GraphEngine.MatchResult.Item1.Add(node);
             }
         }
 
@@ -108,7 +108,7 @@ namespace ConstelLite
             var matchRelationshipLabels = patternChainContext.oC_NodePattern().oC_NodeLabels();
             var matchRelationshipProperties = patternChainContext.oC_NodePattern().oC_Properties();
 
-            foreach (var node in matchResult.Item1)
+            foreach (var node in GraphEngine.MatchResult.Item1)
             {
                 if (Graph.GetInstance().outgoingRelationships.ContainsKey(node))
                 {
@@ -134,14 +134,14 @@ namespace ConstelLite
                                     if (count == matchRelationshipLabels.oC_NodeLabel().Length)
                                     {
                                         // Found a node, add the relationship to match result
-                                        matchResult.Item2.Add(relationship);
+                                        GraphEngine.MatchResult.Item2.Add(relationship);
                                     }
                                     return;
                                 }
                             }
 
                             // Relationship does not specify a relationship or property?
-                            matchResult.Item2.Add(relationship);
+                            GraphEngine.MatchResult.Item2.Add(relationship);
                         }
                     }
                 }
@@ -161,7 +161,7 @@ namespace ConstelLite
             var matchRelationshipLabels = patternChainContext.oC_NodePattern().oC_NodeLabels();
             var matchRelationshipProperties = patternChainContext.oC_NodePattern().oC_Properties();
 
-            foreach (var node in matchResult.Item1)
+            foreach (var node in GraphEngine.MatchResult.Item1)
             {
                 if (Graph.GetInstance().incomingRelationships.ContainsKey(node))
                 {
@@ -188,14 +188,14 @@ namespace ConstelLite
                                     if (count == matchRelationshipLabels.oC_NodeLabel().Length)
                                     {
                                         // Found a node, add the relationship to match result
-                                        matchResult.Item2.Add(relationship);
+                                        GraphEngine.MatchResult.Item2.Add(relationship);
                                     }
                                     return;
                                 }
                             }
 
                             // Relationship does not specify a relationship or property?
-                            matchResult.Item2.Add(relationship);
+                            GraphEngine.MatchResult.Item2.Add(relationship);
                         }
                     }
                 }
@@ -214,7 +214,7 @@ namespace ConstelLite
         {
             // Variable List stores all variable names and their respective id that points a node for the current MATCH context
             //matchVariableList = new Dictionary<string, string>();
-            matchResult = (new HashSet<Node>(), new HashSet<Relationship>());
+            GraphEngine.MatchResult = (new HashSet<Node>(), new HashSet<Relationship>());
 
             // Clear Previous Match Results, not needed currently
             /*
